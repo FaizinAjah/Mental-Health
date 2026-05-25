@@ -3,7 +3,7 @@ import { auth } from './firebase';
 import { signOut } from 'firebase/auth';
 import feather from 'feather-icons';
 
-// --- DATA 6 PERTANYAAN KUESIONER (Sesuai Model ML) ---
+// --- DATA 6 PERTANYAAN KUESIONER 
 const KUESIONER_QUESTIONS = [
     { id: 'mood', text: "1. Bagaimana suasana hatimu secara keseluruhan minggu ini?", min: "Sangat Buruk", max: "Sangat Baik" },
     { id: 'tidur', text: "2. Bagaimana kualitas tidurmu belakangan ini?", min: "Sangat Buruk", max: "Sangat Baik" },
@@ -71,7 +71,7 @@ export default function Dashboard({ user }) {
 
         /* 
         ========================================================================
-        🔥 INTEGRASI API FASTAPI (Uncomment kode di bawah ini jika API sudah siap)
+        🔥 INTEGRASI API FASTAPI 
         ========================================================================
         try {
             const response = await fetch("http://localhost:8000/predict_mood", {
@@ -87,7 +87,7 @@ export default function Dashboard({ user }) {
         ========================================================================
         */
 
-        // 🧠 MOCKUP LOGIKA MODEL SEMENTARA (Sama persis dengan assign_label di Python temanmu)
+        // 🧠 MOCKUP LOGIKA MODEL SEMENTARA 
         let skor = mood + tidur + aktivitas + energi + (6 - stres) + sosial;
         let detectedMood = "NEUTRAL";
         
@@ -136,7 +136,7 @@ export default function Dashboard({ user }) {
 
         let chatIdToUpdate = currentChatId;
 
-        // Buat chat baru jika sedang di menu 'newchat'
+        // Buat chat baru  'newchat'
         if (activeTab === 'newchat' || !currentChatId) {
             const newChat = {
                 id: Date.now(),
@@ -185,7 +185,7 @@ export default function Dashboard({ user }) {
         setKuesionerAnswers(prev => ({ ...prev, [key]: value }));
     };
 
-    // --- HELPER WARNA MOOD (Sesuai Visualisasi Model) ---
+    // --- HELPER WARNA MOOD  ---
     const getMoodColor = (mood) => {
         switch(mood?.toUpperCase()) {
             case 'DISTRESSED': return 'text-[#d62728] border-[#d62728]/30 bg-[#d62728]/10'; // Merah
@@ -398,7 +398,7 @@ export default function Dashboard({ user }) {
                         </div>
                     )}
 
-                    {/* --- VIEW: KUESIONER (Update Sesuai 6 Parameter Model ML) --- */}
+                    {/* --- VIEW: KUESIONER --- */}
                     {activeTab === 'kuesioner' && (
                         <div className="max-w-3xl mx-auto fade-in pb-20">
                             <h2 className="text-3xl font-semibold mb-2">Kuesioner Kesehatan Mental</h2>
