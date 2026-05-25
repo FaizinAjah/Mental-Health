@@ -1,0 +1,31 @@
+@import "tailwindcss";
+
+@theme {
+  /* Warna utama MindSpace */
+  --color-ms-bg: #131314;
+  --color-ms-surface: #1E1F20;
+  --color-ms-hover: #282A2C;
+  --color-ms-text: #E3E3E3;
+  --color-ms-textmuted: #C4C7C5;
+  --color-ms-primary: #A8C7FA;
+
+  /* Warna Mood */
+  --color-mood-tenang: #6EE7B7;
+  --color-mood-senang: #93C5FD;
+  --color-mood-cemas: #FCD34D;
+  --color-mood-sedih: #A78BFA;
+  --color-mood-stres: #FCA5A5;
+}
+
+/* Custom Scrollbar */
+.custom-scroll::-webkit-scrollbar { 
+    height: 6px; 
+    width: 6px; 
+}
+.custom-scroll::-webkit-scrollbar-track { 
+    background: transparent; 
+}
+.custom-scroll::-webkit-scrollbar-thumb { 
+    background: #4b4d50; 
+    border-radius: 10px; 
+}
